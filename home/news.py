@@ -1,14 +1,14 @@
 import feedparser
 
 
-def getFeed():
-    feedUrl = "https://www.cbc.ca/webfeed/rss/rss-canada"
+def getFeed(location):
+    feedUrl = determineUrl(location)
     feed = feedparser.parse(feedUrl)
     posts = feed.entries
     wildfireNews = []
 
     for post in posts:
-        if "wildfire" in post.title or "Wildfire" in post.title:
+        if "wildfire" in post.title.lower():
             temp = dict()
             temp["Title"] = post.title
             temp["Time Published"] = post.published
@@ -19,4 +19,10 @@ def getFeed():
     return wildfireNews
 
 
-print(getFeed())
+# Returns RSS feed link for a given location
+# Parameter: the end of the string from the regional news list from this site: https://www.cbc.ca/rss/
+# Return: full RSS feed link
+def determineUrl(location):
+    if location == "canada":
+        return "https://www.cbc.ca/webfeed/rss/rss-canada"
+    return "https://www.cbc.ca/webfeed/rss/rss-canada-" + location
