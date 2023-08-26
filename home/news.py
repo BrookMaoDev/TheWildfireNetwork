@@ -19,4 +19,4 @@ def getFeed():
     return wildfireNews
 
 
-getFeed()
+print(getFeed())
