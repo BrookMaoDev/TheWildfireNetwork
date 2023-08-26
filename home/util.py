@@ -53,9 +53,7 @@ def getFeed():
             temp["Title"] = post.title
             temp["Time Published"] = post.published
             temp["Link"] = post.link
+            temp["Summary"] = post.summary
             wildfireNews.append(temp)
 
     return wildfireNews
-
-
-print(getFeed())
