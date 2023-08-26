@@ -20,7 +20,29 @@ def getFeed(location):
 
 
 # Returns RSS feed link for a given location
-# Parameter: the end of the string from the regional news list from this site: https://www.cbc.ca/rss/
+# Possible parameters:
+    # canada
+    # britishcolumbia
+    # kamloops
+    # calgary
+    # edmonton
+    # saskatchewan
+    # saskatoon
+    # manitoba
+    # thunderbay
+    # sudbury
+    # windsor
+    # london
+    # kitchenerwaterloo
+    # toronto
+    # hamiltonnews
+    # montreal
+    # newbrunswick
+    # pei
+    # novascotia
+    # newfoundland
+    # north
+    # ottawa
 # Return: full RSS feed link
 def determineUrl(location):
     if location == "canada":
