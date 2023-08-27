@@ -5,8 +5,8 @@ The Wildfire Network {% endblock %} {% block style %}
 <style>
   body {
     background-color: #bfaaaa;
-   }
-  </style> 
+  }
+</style>
 <div class="container">
   <div class="card bg-gray mt-4 mr-4 ml-4 mb-4">
     <div class="card-body fw-bold">
@@ -24,6 +24,7 @@ The Wildfire Network {% endblock %} {% block style %}
           class="form-control"
           placeholder="name@example.com"
           name="email"
+          required
         />
         <label for="floatingInput">Email address</label>
       </div>
@@ -33,6 +34,7 @@ The Wildfire Network {% endblock %} {% block style %}
           class="form-control"
           placeholder="Henry"
           name="firstName"
+          required
         />
         <label for="floatingInput">First name</label>
       </div>
@@ -42,16 +44,19 @@ The Wildfire Network {% endblock %} {% block style %}
           class="form-control"
           placeholder="Cavill"
           name="lastName"
+          required
         />
         <label for="floatingInput">Last name</label>
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
         <input
-          type="text"
+          type="number"
+          step=".01"
           class="form-control"
           aria-label="Amount (to the nearest dollar)"
           name="amount"
+          required
         />
         <span class="input-group-text">.00</span>
       </div>
