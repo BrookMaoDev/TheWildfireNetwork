@@ -3,14 +3,19 @@
 <link href="{% static 'donate.css' %}" rel="stylesheet" />
 {% endblock %} {% block content %}
 
-<div>
-  <h1>Thanks</h1>
-  <p>Thank you {{ firstName }}, for your donation of ${{ amount }}!</p>
-  <p>A confirmation email and receipt will be sent to {{ email }}.</p>
-  <p>
-    Your donation will be used to aid in wildfire prevention and rescue efforts
-    across Canada!
-  </p>
+<div class="container">
+  <div class="alert alert-success mt-5" role="alert">
+    <h4 class="alert-heading">Donation Successful!</h4>
+    <p>Thank you {{ firstName }}, for your donation of ${{ amount }}!</p>
+    <p>
+      Your donation will be used to aid in wildfire prevention and rescue efforts
+      across the world!
+    </p>
+    <hr>
+    <p class="mb-0">A confirmation email and receipt will be sent to {{ email }}.</p>
+  </div>
 </div>
+
+
 
 {% endblock %}
