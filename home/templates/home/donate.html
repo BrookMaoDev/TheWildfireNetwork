@@ -2,12 +2,35 @@
 The Wildfire Network {% endblock %} {% block style %}
 <link href="{% static 'donate.css' %}" rel="stylesheet" />
 {% endblock %} {% block content%}
-<div>
+<div class="container">
+  <div class="card bg-gray mt-4 mr-4 ml-4 mb-4">
+    <div class="card-body fw-bold">
+      Donating is one of the best ways to help those affected by wildfires. Every dollar makes an impact.
+    </div>
+  </div>
   <h1>Donate</h1>
-  <div>
+  <div class="mt-3">
     <form action="{% url 'donate' %}" method="POST">
       {% csrf_token %} {{ donateForm }}
-      <input type="submit" />
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Henry">
+        <label for="floatingInput">First name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Cavill">
+        <label for="floatingInput">Last name</label>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Donate</button>
     </form>
   </div>
 </div>
