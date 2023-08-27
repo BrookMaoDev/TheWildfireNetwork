@@ -1,4 +1,4 @@
-# TheWildfireNetwork
+# The Wildfire Network
 
 ![6183429](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6)
 
