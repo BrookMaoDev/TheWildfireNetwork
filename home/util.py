@@ -39,7 +39,7 @@ class Location:
         if response.status_code == 200:
             return response.json()
         else:
-            return None
+            return {}
 
     def calculateFireRisk(self, temp_c, humidity, wind_kph):
         """

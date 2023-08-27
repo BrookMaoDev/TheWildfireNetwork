@@ -8,30 +8,11 @@ from . import news
 
 
 def index(request):
-    request.session["city"] = "Toronto"
-    request.session["postal"] = None
-    if request.session["postal"] == None or request.session["city"] == None:
-        user_ip_address = request.META.get("HTTP_X_FORWARDED_FOR")
-        if user_ip_address:
-            ip = user_ip_address.split(",")[0]
-        else:
-            ip = request.META.get("REMOTE_ADDR")
-
-        try:
-            g = GeoIP2()
-            location = g.city(ip)
-            request.session["city"] = location["city"]
-            request.session["postal"] = location["postal_code"]
-        except:
-            # default values
-            request.session["city"] = "Toronto"
-            request.session["postal"] = None
-    news_list = news.getFeed("britishcolumbia")
-    location = util.Location(request.session["city"], request.session["postal"])
+    news_list = news.getFeed("canada")
     return render(
         request,
         "home/index.html",
-        {"response": location.getForecast(), "news_list": news_list},
+        {"news_list": news_list},
     )
 
 
@@ -40,31 +21,21 @@ def predict(request):
         # verify if city and postal are valid
         form = predictForm(request.POST)
         if form.is_valid():
-            postal = form.cleaned_data["postal"]
-            city = form.cleaned_data["postal"]
-            if postal or city:
-                request.session["postal"] = form.cleaned_data["postal"]
-                request.session["city"] = form.cleaned_data["city"]
-                location = util.Location(
-                    request.session["city"], request.session["postal"]
-                )
-                if location.is_valid():
-                    return render(
-                        request,
-                        "home/predict.html",
-                        {
-                            "predictForm": predictForm(),
-                            "forecasts": location.getForecast(),
-                        },
-                    )
+            request.session["postal"] = form.cleaned_data["postal"]
+            request.session["city"] = form.cleaned_data["city"]
 
-    location = util.Location("Toronto")
+    location = util.Location(request.session["city"], request.session["postal"])
+    forecast = location.getForecast()
     return render(
         request,
         "home/predict.html",
         {
             "predictForm": predictForm(),
-            "forecast": location.getForecast(),
+            "text": forecast["current"]["condition"]["text"],
+            "temp_c": forecast["current"]["temp_c"],
+            "humidity": forecast["current"]["humidity"],
+            "wind_kph": forecast["current"]["wind_kph"],
+            "precip_mm": forecast["current"]["precip_mm"],
         },
     )
 
