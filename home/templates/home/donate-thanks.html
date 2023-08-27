@@ -1,0 +1,16 @@
+{% extends "home/layout.html" %} {% load static %} {% block title %} Thank You{%
+endblock %} {% block style %}
+<link href="{% static 'donate.css' %}" rel="stylesheet" />
+{% endblock %} {% block content %}
+
+<div>
+  <h1>Thanks</h1>
+  <p>Thank you {{ firstName }}, for your donation of ${{ amount }}!</p>
+  <p>A confirmation email and receipt will be sent to {{ email }}.</p>
+  <p>
+    Your donation will be used to aid in wildfire prevention and rescue efforts
+    across Canada!
+  </p>
+</div>
+
+{% endblock %}

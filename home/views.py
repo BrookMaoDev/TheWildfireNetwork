@@ -54,3 +54,27 @@ class predictForm(forms.Form):
 
 def about(request):
     return render(request, "home/about.html")
+
+
+def donate(request):
+    if request.method == "POST":
+        form = donateForm(request.POST)
+        if form.is_valid():
+            return render(
+                request,
+                "home/donate-thanks.html",
+                {
+                    "firstName": form.cleaned_data["firstName"],
+                    "email": form.cleaned_data["email"],
+                    "amount": "{:.2f}".format(form.cleaned_data["amount"]),
+                },
+            )
+
+    return render(request, "home/donate.html", {"donateForm": donateForm()})
+
+
+class donateForm(forms.Form):
+    firstName = forms.CharField(label="First Name ")
+    lastName = forms.CharField(label="Last Name")
+    email = forms.EmailField(label="Email Address ")
+    amount = forms.FloatField(label="Donation ")
