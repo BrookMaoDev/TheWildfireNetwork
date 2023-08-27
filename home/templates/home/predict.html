@@ -1,24 +1,30 @@
-{% extends "home/layout.html" %} {% block title %} Wildfire Prediction | The
-Wildfire Network {% endblock %} {% block content %}
-<div>
-  <form action="{% url 'predict' %}" method="POST">
-    {% csrf_token %} {{ predictForm }}
-    <input type="submit" />
-  </form>
-</div>
-<div id="todayForecast">
-  {% comment %} Display weather data {% endcomment %}
-  <h1>Today</h1>
-  <h3>{{ text }}</h3>
-  <p>{{ temp_c }}</p>
-  <p><label>Humidity </label>{{ humidity }}%</p>
-  <p><label>Wind </label>{{ wind_kph }} km/h</p>
-  <p><label>Precipitation </label>{{ precip_mm }} mm</p>
-  <p>{{ name }}, {{ country }}</p>
-</div>
-<div id="fireRisk">
-  <h1>Wildfire Risk</h1>
-  {{ message }}
-</div>
+{% extends "home/layout.html" %} {% load static %} {% block title %} Wildfire
+Prediction | The Wildfire Network {% endblock %} {% block style %}
+<link href="{% static 'home/predict.css' %}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<section>
+  <div id="form">
+    <form action="{% url 'predict' %}" method="POST">
+      {% csrf_token %} {{ predictForm }}
+      <input type="submit" value="Predict" />
+    </form>
+  </div>
+  <img src="{% static 'home/img/arrow.png' %}" width='100px'>
+  <div id="todayForecast">
+    {% comment %} Display weather data {% endcomment %}
+    <h1>Today</h1>
+    <h3>{{ text }}</h3>
+    <h3>{{ temp_c }}°</h3>
+    <p><label>Humidity </label> {{ humidity }}%</p>
+    <p><label>Wind </label> {{ wind_kph }} km/h</p>
+    <p><label>Precipitation </label> {{ precip_mm }} mm</p>
+    <em>{{ name }}, {{ country }}</em>
+  </div>
+  <img src="{% static 'home/img/arrow.png' %}" width='100px'>
+  <div id="fireRisk">
+    <h1>Wildfire Risk</h1>
+    {{ message }}
+  </div>
+</section>
 
 {% endblock %}
