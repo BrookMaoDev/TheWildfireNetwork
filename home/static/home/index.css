@@ -1,0 +1,14 @@
+.carousel .item {
+    height: 700px;
+  }
+
+  .carousel-inner {
+    height: 700px
+  }
+  
+  .item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 700px;
+  }
