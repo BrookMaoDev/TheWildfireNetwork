@@ -4,12 +4,20 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
   padding: 100px;
+  color:  #e8e8e8 ;
+  font-family: "Monaco", monospace;
+  text-shadow: 2px 2px #6e2d2d;
+}
+
+.card-custom {
+  min-height: 150px;
 }
 
 #text {
   margin: 50px;
+  
 }
+
 
 /*# sourceMappingURL=about.css.map */
