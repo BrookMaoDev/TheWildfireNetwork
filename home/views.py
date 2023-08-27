@@ -7,7 +7,7 @@ from datetime import datetime
 
 def index(request):
     date = datetime.today().strftime("%Y%m%d")
-    fireM3 = f"https://cwfis.cfs.nrcan.gc.ca/data/maps/fireM3/{datetime.today().year}/tri{date}.png"
+    fireM3 = "https://cwfis.cfs.nrcan.gc.ca/data/maps/fireM3/2023/tri20230826.png"
     news_list = news.getFeed("canada")
     return render(
         request,
@@ -23,9 +23,10 @@ def predict(request):
         if form.is_valid():
             request.session["postal"] = form.cleaned_data["postal"]
             request.session["city"] = form.cleaned_data["city"]
+    else:
+        request.session['city'] = "Toronto"
+        request.session['postal'] = None
 
-    request.session["city"] = "Toronto"
-    request.session["postal"] = None
     location = util.Location(request.session["city"], request.session["postal"])
     forecast = location.getForecast()
 
