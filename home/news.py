@@ -13,7 +13,7 @@ def getFeed(location):
             temp["Title"] = post.title
             temp["Time Published"] = post.published
             temp["Link"] = post.link
-            temp["Summary"] = post.summary
+            temp["Image"] = getImage(post.summary)
             wildfireNews.append(temp)
 
     return wildfireNews
