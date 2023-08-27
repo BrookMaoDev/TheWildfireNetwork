@@ -14,7 +14,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+API_KEY = "112a7f3da6b14eb08bf01432232608"
 
 from pathlib import Path
 
@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-2crp*sf_=%&u+m@ey$v!d*4=968(_gw3=(1__e5#55+ztep@hl"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app']
 
