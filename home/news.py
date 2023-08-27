@@ -7,14 +7,18 @@ def getFeed(location):
     posts = feed.entries
     wildfireNews = []
 
+    x=0
     for post in posts:
         if "wildfire" in post.title.lower():
+            x+=1
             temp = dict()
             temp["Title"] = post.title
             temp["TimePublished"] = post.published
             temp["Link"] = post.link
             temp["Image"] = getImage(post.summary)
             wildfireNews.append(temp)
+        if x >= 3:
+            break
 
     return wildfireNews
 
