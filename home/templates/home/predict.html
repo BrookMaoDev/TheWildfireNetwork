@@ -15,15 +15,11 @@
     <div id="todayForecast">
       {% comment %} Display weather data {% endcomment %}
       <h1>Today</h1>
-      <h3>{{ forecast['current']['condition']['text'] }}</h3>
-      <p>{{ forecast['current']['temp_c'] }}</p>
-      <p>
-        <label>High/Low </label>{{ forecast['current']['maxtemp_c'] }}°/{{
-        forecast['current']['mintemp_c'] }}°
-      </p>
-      <p><label>Humidity </label>{{ forecast['current']['humidity ']}}%</p>
-      <p><label>Wind </label>{{ forecast['current']['wind_kph ']}} km/h</p>
-      <p><label>Precipitation </label>{{ forecast['current']['precip_mm'] }} mm</p>
+      <h3>{{ text }}</h3>
+      <p>{{ temp_c }}</p>
+      <p><label>Humidity </label>{{ humidity }}%</p>
+      <p><label>Wind </label>{{ wind_kph }} km/h</p>
+      <p><label>Precipitation </label>{{ precip_mm }} mm</p>
     </div>
   </body>
 </html>
