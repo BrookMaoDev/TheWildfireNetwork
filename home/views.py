@@ -6,6 +6,7 @@ from django.urls import reverse
 from . import util
 from . import news
 
+
 def index(request):
     request.session["city"] = "Toronto"
     request.session["postal"] = None
@@ -27,7 +28,11 @@ def index(request):
             request.session["postal"] = None
     news_list = news.getFeed("britishcolumbia")
     location = util.Location(request.session["city"], request.session["postal"])
-    return render(request, "home/index.html", {"response": location.getForecast(), "news_list": news_list})
+    return render(
+        request,
+        "home/index.html",
+        {"response": location.getForecast(), "news_list": news_list},
+    )
 
 
 def predict(request):
