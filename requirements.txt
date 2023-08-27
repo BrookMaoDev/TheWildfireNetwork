@@ -4,6 +4,7 @@ charset-normalizer==3.2.0
 Django==4.2.4
 feedparser==6.0.10
 idna==3.4
+python-dotenv==1.0.0
 requests==2.31.0
 sgmllib3k==1.0.0
 sqlparse==0.4.4
