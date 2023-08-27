@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Change Location</title>
-  </head>
-  <body>
-    <div>
-      <form action="{% url 'predict' %}" method="POST">
-        {% csrf_token %} {{ predictForm }}
-        <input type="submit" />
-      </form>
-    </div>
-    <div id="todayForecast">
-      {% comment %} Display weather data {% endcomment %}
-      <h1>Today</h1>
-      <h3>{{ text }}</h3>
-      <p>{{ temp_c }}</p>
-      <p><label>Humidity </label>{{ humidity }}%</p>
-      <p><label>Wind </label>{{ wind_kph }} km/h</p>
-      <p><label>Precipitation </label>{{ precip_mm }} mm</p>
-      <p>{{ name }}, {{ country }}</p>
-    </div>
-    <div id="fireRisk">
-      <h1>Wildfire Risk</h1>
-      {{ message }}
-    </div>
-  </body>
-</html>
+{% extends "home/layout.html" %} {% block title %} Wildfire Prediction | The
+Wildfire Network {% endblock %} {% block content %}
+<div>
+  <form action="{% url 'predict' %}" method="POST">
+    {% csrf_token %} {{ predictForm }}
+    <input type="submit" />
+  </form>
+</div>
+<div id="todayForecast">
+  {% comment %} Display weather data {% endcomment %}
+  <h1>Today</h1>
+  <h3>{{ text }}</h3>
+  <p>{{ temp_c }}</p>
+  <p><label>Humidity </label>{{ humidity }}%</p>
+  <p><label>Wind </label>{{ wind_kph }} km/h</p>
+  <p><label>Precipitation </label>{{ precip_mm }} mm</p>
+  <p>{{ name }}, {{ country }}</p>
+</div>
+<div id="fireRisk">
+  <h1>Wildfire Risk</h1>
+  {{ message }}
+</div>
+
+{% endblock %}
