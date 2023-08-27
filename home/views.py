@@ -58,19 +58,17 @@ def about(request):
 
 def donate(request):
     if request.method == "POST":
-        form = donateForm(request.POST)
-        if form.is_valid():
-            return render(
-                request,
-                "home/donate-thanks.html",
-                {
-                    "firstName": form.cleaned_data["firstName"],
-                    "email": form.cleaned_data["email"],
-                    "amount": "{:.2f}".format(form.cleaned_data["amount"]),
-                },
-            )
+        return render(
+            request,
+            "home/donate-thanks.html",
+            {
+                "firstName": request.POST.get("firstName"),
+                "email": request.POST.get("email"),
+                "amount": "{:.2f}".format(float(request.POST.get("amount"))),
+            },
+        )
 
-    return render(request, "home/donate.html", {"donateForm": donateForm()})
+    return render(request, "home/donate.html")
 
 
 class donateForm(forms.Form):
