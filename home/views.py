@@ -4,34 +4,30 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from django.urls import reverse
 from . import util
-
+from . import news
 
 def index(request):
     request.session["city"] = "Toronto"
     request.session["postal"] = None
-    # if request.session["postal"] == None or request.session["city"] == None:
-    #     user_ip_address = request.META.get("HTTP_X_FORWARDED_FOR")
-    #     if user_ip_address:
-    #         ip = user_ip_address.split(",")[0]
-    #     else:
-    #         ip = request.META.get("REMOTE_ADDR")
+    if request.session["postal"] == None or request.session["city"] == None:
+        user_ip_address = request.META.get("HTTP_X_FORWARDED_FOR")
+        if user_ip_address:
+            ip = user_ip_address.split(",")[0]
+        else:
+            ip = request.META.get("REMOTE_ADDR")
 
-    #     try:
-    #         g = GeoIP2()
-    #         location = g.city(ip)
-    #         request.session["city"] = location["city"]
-    #         request.session["postal"] = location["postal_code"]
-    #     except:
-    #         # default values
-    #         request.session["city"] = "Toronto"
-    #         request.session["postal"] = None
-
+        try:
+            g = GeoIP2()
+            location = g.city(ip)
+            request.session["city"] = location["city"]
+            request.session["postal"] = location["postal_code"]
+        except:
+            # default values
+            request.session["city"] = "Toronto"
+            request.session["postal"] = None
+    news_list = news.getFeed("britishcolumbia")
     location = util.Location(request.session["city"], request.session["postal"])
-    return HttpResponse(location.getForecast())
-    return render(
-        request,
-        "home/index.html",
-    )
+    return render(request, "home/index.html", {"response": location.getForecast(), "news_list": news_list})
 
 
 def predict(request):
@@ -58,7 +54,6 @@ def predict(request):
                     )
 
     location = util.Location("Toronto")
-    return HttpResponse(location.getForecast())
     return render(
         request,
         "home/predict.html",
