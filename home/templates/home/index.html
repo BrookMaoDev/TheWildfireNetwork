@@ -109,7 +109,7 @@
       {% for story in news_list %} 
         <div class="col">
           <div class="card">
-            <img src="" class="card-img-top" alt="...">
+            <img src={{ story.Image }} class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ story.Title }}</h5>
               <p class="card-text">{{ story.TimePublished }}</p>
