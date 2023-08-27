@@ -1,8 +1,5 @@
 from django.shortcuts import render
-from django.contrib.gis.geoip2 import GeoIP2
-from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
-from django.urls import reverse
 from . import util
 from . import news
 
@@ -26,16 +23,26 @@ def predict(request):
 
     location = util.Location(request.session["city"], request.session["postal"])
     forecast = location.getForecast()
+
+    temp_c = forecast["current"]["temp_c"]
+    humidity = forecast["current"]["humidity"]
+    wind_kph = forecast["current"]["wind_kph"]
+
+    fireRisk = location.calculateFireRisk(temp_c, humidity, wind_kph)
+
     return render(
         request,
         "home/predict.html",
         {
             "predictForm": predictForm(),
             "text": forecast["current"]["condition"]["text"],
-            "temp_c": forecast["current"]["temp_c"],
-            "humidity": forecast["current"]["humidity"],
-            "wind_kph": forecast["current"]["wind_kph"],
+            "temp_c": temp_c,
+            "humidity": humidity,
+            "wind_kph": wind_kph,
             "precip_mm": forecast["current"]["precip_mm"],
+            "name": forecast["location"]["name"],
+            "country": forecast["location"]["country"],
+            "message": fireRisk,
         },
     )
 
@@ -43,3 +50,7 @@ def predict(request):
 class predictForm(forms.Form):
     postal = forms.CharField(label="Postal Code", required=False)
     city = forms.CharField(label="City", required=False)
+
+
+def about(request):
+    return render(request, "home/about.html")

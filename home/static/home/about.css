@@ -1,0 +1,15 @@
+#header {
+  background-color: #eee;
+  background-image: url("img/about-header.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 100px;
+}
+
+#text {
+  margin: 50px;
+}
+
+/*# sourceMappingURL=about.css.map */

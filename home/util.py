@@ -56,14 +56,27 @@ class Location:
 
         # Calculate fire risk based on factors' relation to thresholds
         fireRisk = 0
+        message = ""
 
         if temp_c >= tempThreshold:
             fireRisk += 1
+            message += "The temperature is high enough to pose a risk of fire. Higher temperature reduce moisture content in the air and can create more intense fires that spread faster.\n"
 
         if humidity <= humidityThreshold:
             fireRisk += 1
+            message += "The humidity is low enough to pose a risk of fire. Drier air leads to reduced moisture and faster evaporation, which both increase fire spread and intensity.\n"
 
         if wind_kph >= windThreshold:
             fireRisk += 1
+            message += "The wind speed is high enough to greatly increase the risk of any fires. High wind speeds can cause fires to spread more rapidly, carrying flames and embers while supplying them with oxygen.\n"
 
-        return fireRisk
+        if fireRisk == 0:
+            message += "\nThere is a low fire risk in your area."
+        elif fireRisk == 1:
+            message += "\nThere is a moderate fire risk in your area."
+        elif fireRisk == 2:
+            message += "\nThere is a high fire risk in your area."
+        else:
+            message += "\nThere is an extreme fire risk in your area."
+
+        return message
