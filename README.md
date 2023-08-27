@@ -1,5 +1,7 @@
 # TheWildfireNetwork
 
+![Uploading image.png…]()
+
 Introducing The Wildfire Network: a tool that uses real and up-to-date weather data to predict forest fires anywhere around the world  
 This app is our way of fighting the growing crisis. 
 
