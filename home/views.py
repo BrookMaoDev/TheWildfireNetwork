@@ -24,8 +24,8 @@ def predict(request):
             request.session["postal"] = form.cleaned_data["postal"]
             request.session["city"] = form.cleaned_data["city"]
     else:
-        request.session["city"] = "Toronto"
-        request.session["postal"] = None
+        request.session['city'] = "Toronto"
+        request.session['postal'] = None
 
     location = util.Location(request.session["city"], request.session["postal"])
     forecast = location.getForecast()
