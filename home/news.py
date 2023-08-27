@@ -19,30 +19,38 @@ def getFeed(location):
     return wildfireNews
 
 
+def getImage(summaryLink):
+    startIndex = summaryLink.index('src="')
+    slice1 = summaryLink[startIndex + 5 :]
+    startIndex = slice1.index('"')
+    slice2 = slice1[:startIndex]
+    return slice2
+
+
 # Returns RSS feed link for a given location
 # Possible parameters:
-    # canada
-    # britishcolumbia
-    # kamloops
-    # calgary
-    # edmonton
-    # saskatchewan
-    # saskatoon
-    # manitoba
-    # thunderbay
-    # sudbury
-    # windsor
-    # london
-    # kitchenerwaterloo
-    # toronto
-    # hamiltonnews
-    # montreal
-    # newbrunswick
-    # pei
-    # novascotia
-    # newfoundland
-    # north
-    # ottawa
+# canada
+# britishcolumbia
+# kamloops
+# calgary
+# edmonton
+# saskatchewan
+# saskatoon
+# manitoba
+# thunderbay
+# sudbury
+# windsor
+# london
+# kitchenerwaterloo
+# toronto
+# hamiltonnews
+# montreal
+# newbrunswick
+# pei
+# novascotia
+# newfoundland
+# north
+# ottawa
 # Return: full RSS feed link
 def determineUrl(location):
     if location == "canada":
