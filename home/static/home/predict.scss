@@ -1,0 +1,65 @@
+section {
+  background-image: url("https://images.pexels.com/photos/1423600/pexels-photo-1423600.jpeg?cs=srgb&dl=pexels-johannes-plenio-1423600.jpg&fm=jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+@mixin container {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 50px;
+  border-radius: 25px;
+  border: 2px solid black;
+}
+
+img {
+  $margin: 50px;
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+#form {
+  @include container;
+  display: flex;
+  width: 250px;
+
+  form {
+    padding: 20px;
+  }
+
+  input {
+    margin-top: 20px;
+  }
+}
+
+#todayForecast {
+  @include container;
+  display: block;
+  width: 400px;
+  padding: 10px;
+
+  h1 {
+    text-decoration: underline;
+    padding-bottom: 10px;
+  }
+
+  label {
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+}
+
+#fireRisk {
+    @include container;
+    display: block;
+    width: 400px;
+    padding: 10px;
+}
