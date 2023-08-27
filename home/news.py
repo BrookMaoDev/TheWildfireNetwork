@@ -17,7 +17,7 @@ def getFeed(location):
             temp["Link"] = post.link
             temp["Image"] = getImage(post.summary)
             wildfireNews.append(temp)
-        if x >= 3:
+        if x >= 4:
             break
 
     return wildfireNews
