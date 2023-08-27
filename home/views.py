@@ -7,8 +7,7 @@ from datetime import datetime
 
 def index(request):
     date = datetime.today().strftime("%Y%m%d")
-    # fireM3 = f"https://cwfis.cfs.nrcan.gc.ca/data/maps/fireM3/{datetime.today().year}/tri{date}.png"
-    fireM3 = f"https://cwfis.cfs.nrcan.gc.ca/data/maps/fireM3/2023/tri20230825.png"
+    fireM3 = f"https://cwfis.cfs.nrcan.gc.ca/data/maps/fireM3/{datetime.today().year}/tri{date}.png"
     news_list = news.getFeed("canada")
     return render(
         request,
