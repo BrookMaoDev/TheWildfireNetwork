@@ -11,7 +11,7 @@ def getFeed(location):
         if "wildfire" in post.title.lower():
             temp = dict()
             temp["Title"] = post.title
-            temp["Time Published"] = post.published
+            temp["TimePublished"] = post.published
             temp["Link"] = post.link
             temp["Image"] = getImage(post.summary)
             wildfireNews.append(temp)
