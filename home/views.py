@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from django.urls import reverse
 from . import util
-
+from . import news
 
 def index(request):
     if not request.session["postal"] or not request.session["city"]:
@@ -23,9 +23,9 @@ def index(request):
             # default values
             request.session["city"] = "Toronto"
             request.session["postal"] = None
-
+    news_list = news.getFeed("britishcolumbia")
     location = util.Location(request.session["city"], request.session["postal"])
-    return render(request, "home/index.html", {"response": location.getForecast()})
+    return render(request, "home/index.html", {"response": location.getForecast(), "news_list": news_list})
 
 
 def predict(request):
