@@ -9,10 +9,11 @@ This app is our way of fighting the growing crisis.
 Our web app stemmed from the increasing frequency and severity of wildfires in the country. Over the past few years, Canada has been experiencing a rising number of wildfires that have had significant ecological, economic, and human impacts, and we created this app in efforts to combat this national and worldwide disaster.
 
 ## What it does
-Our app uses an api to retrieve updated and real world weather data of any location entered by the user. Using an algorithm, it is then able to predict the probability of a wildfire occurrence. It also provides up to date news regarding forest fires around the world with a news api, as well as support resources, such as a donation feature.
+Our app uses feedparser to scrape news headlines filtered by wildfires and displays them on the homepage. Our wildfire prediction uses an algorithm with real-time data gathered from WeatherAPI to calculate risk of fire anywhere around the world. Furthermore, we provideusers with support resources as well as the opportunity to donate to help wildfire prevention and rescue efforts.
 
 ## How we built it
-The website was built mainly with python. Django and python were used for the backend and all api requests, while html/css was used for the frontend, with Bootstrap being used for styling. The website was hosted with the use of github pages, and git/github was used for version control and team collaboration.
+We used Django as the back-end framework, with Python handling API requests and web scraping.
+On the front-end, HTML/CSS was used alongside Bootstrap for styling.
 
 ## Challenges we ran into
 - Dealing with merge conflicts in initial production
@@ -26,8 +27,8 @@ The website was built mainly with python. Django and python were used for the ba
 
 ## What we learned
 - How to work together and use version control to collaborate
-- As new developers, we had a lot to learn about the libraries and frameworks before starting out
-- How to integrate api's into an application
+- As novice web developers, we had a lot to learn about the libraries and frameworks before starting out
+- How to integrate API's into an application
 
 ## What's next for The Wildfire Network
 Next, we might enhance the algorithm by using historical data to analyze trends and patterns to more accurately make predictions. A comprehensive and working payment feature could also be added which would allow users to donate real money to wildfire rescue organizations around the globe.
