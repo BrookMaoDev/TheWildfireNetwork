@@ -2,7 +2,7 @@
 
 ![6183429](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6)
 
-The Wildfire Network: Your advanced solution for global forest fire prediction. Harnessing real-time weather data, our app offers accurate forecasts and wildfire risk assessment, combating the escalating crisis head-on.
+Your advanced solution for global forest fire prediction. Harnessing real-time weather data, our app offers accurate forecasts and wildfire risk assessment, combating the escalating crisis head-on.
 
 ## Inspiration
 Our web app stemmed from the increasing frequency and severity of wildfires in the country. Over the past few years, Canada has been experiencing a rising number of wildfires that have had significant ecological, economic, and human impacts, and we created this app in efforts to combat this national and worldwide disaster.
