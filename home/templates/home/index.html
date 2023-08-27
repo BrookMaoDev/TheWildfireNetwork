@@ -14,7 +14,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">The Wildfire Network</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -102,46 +102,22 @@
       </div>
     </div>
 
-    <div class="row">
-      <p class="fs-2 mt-2">Recent news</p>
+     <div class="row">
+      <p class="fs-2 mt-2">Recent news in your area</p>
     </div>
     <div class="row">
-      <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">fire</h5>
-            <p class="card-text">oh nose</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      {% for story in news_list %} 
+        <div class="col">
+          <div class="card">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ story.Title }}</h5>
+              <p class="card-text">{{ story.TimePublished }}</p>
+              <a href={{ story.Link }} class="btn btn-primary">See Article</a>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+        </div> 
+      {% endfor %}
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
