@@ -17,6 +17,11 @@ class Location:
         else:
             self.q = city
 
+    def is_valid(self):
+        if self._forecastResponse().status_code == 200:
+            return True
+        return False
+
     def _forecastResponse(self):
         return requests.get(
             BASE_URL + "forecast.json",
