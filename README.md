@@ -1,6 +1,6 @@
 # TheWildfireNetwork
 
-![Uploading image.png…]()
+![6183429](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6)
 
 Introducing The Wildfire Network: a tool that uses real and up-to-date weather data to predict forest fires anywhere around the world  
 This app is our way of fighting the growing crisis. 
