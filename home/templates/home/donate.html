@@ -5,8 +5,8 @@ The Wildfire Network {% endblock %} {% block style %}
 <style>
   body {
     background-color: #bfaaaa;
-   }
-  </style> 
+  }
+</style>
 <div class="container">
   <div class="card bg-gray mt-4 mr-4 ml-4 mb-4">
     <div class="card-body fw-bold">
@@ -51,7 +51,8 @@ The Wildfire Network {% endblock %} {% block style %}
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
         <input
-          type="text"
+          type="number"
+          step=".01"
           class="form-control"
           aria-label="Amount (to the nearest dollar)"
           name="amount"
