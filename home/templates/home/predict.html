@@ -12,5 +12,28 @@
         <input type="submit" />
       </form>
     </div>
+    <div id="todayForecast">
+      {% comment %} Display weather data {% endcomment %}
+      <h1>Today</h1>
+      <h3>{{ text }}</h3>
+      <p>{{ temp_c }}</p>
+      <p><label>High/Low</label>{{ maxtemp_c }}°/{{ mintemp_c }}°</p>
+      <p><label>Humidity</label>{{ humidity }}%</p>
+      <p><label>Wind</label>{{ wind_kph }} km/h</p>
+      <p><label>Precipitation</label>{{ precip_mm }} mm</p>
+    </div>
+    <div id="futureForecast">
+      {% for forecast in forecasts %}
+        <div class="forecast">
+          <h1>{{ date }}</h1>
+          <h3>{{ text }}</h3>
+          <p>{{ temp_c }}</p>
+          <p><label>High/Low</label>{{ maxtemp_c }}°/{{ mintemp_c }}°</p>
+          <p><label>Humidity</label>{{ humidity }}%</p>
+          <p><label>Wind</label>{{ wind_kph }} km/h</p>
+          <p><label>Precipitation</label>{{ precip_mm }} mm</p>
+        </div>
+      {% endfor %}
+    </div>
   </body>
 </html>

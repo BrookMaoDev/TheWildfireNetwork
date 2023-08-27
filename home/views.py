@@ -16,19 +16,16 @@ def index(request):
 
         try:
             g = GeoIP2()
-            location = g.city("192.206.151.131")
+            location = g.city(ip)
             request.session["city"] = location["city"]
             request.session["postal"] = location["postal_code"]
         except:
-            request.session["city"] = None
+            # default values
+            request.session["city"] = "Toronto"
             request.session["postal"] = None
 
     location = util.Location(request.session["city"], request.session["postal"])
     return render(request, "home/index.html", {"response": location.getForecast()})
-
-
-def changeLocation(request):
-    return HttpResponse("Change Location")
 
 
 def predict(request):
@@ -36,13 +33,20 @@ def predict(request):
         # verify if city and postal are valid
         form = predictForm(request.POST)
         if form.is_valid():
-            request.session["postal"] = form.cleaned_data["postal"]
-            request.session["city"] = form.cleaned_data["city"]
-            return HttpResponseRedirect(reverse("index"))
+            postal = form.cleaned_data["postal"]
+            city = form.cleaned_data["postal"]
+            if postal or city:
+                request.session["postal"] = form.cleaned_data["postal"]
+                request.session["city"] = form.cleaned_data["city"]
+                location = util.Location(request.session["city"], request.session["postal"])
+                if location.is_valid():
+                    return HttpResponseRedirect(reverse("index"))
 
-    return render(request, "home/predict.html", {"predictForm": predictForm()})
+    return render(request, "home/predict.html", {
+                      "predictForm": predictForm(),
+                })
 
 
 class predictForm(forms.Form):
-    postal = forms.CharField(label="Postal Code")
-    city = forms.CharField(label="City")
+    postal = forms.CharField(label="Postal Code", required=False)
+    city = forms.CharField(label="City", required=False)
