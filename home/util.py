@@ -24,25 +24,22 @@ class Location:
 
     def _forecastResponse(self):
         return requests.get(
-            BASE_URL + "forecast.json",
+            BASE_URL + "current.json",
             params={
                 "key": API_KEY,
                 "q": self.q,
-                "days": 7,
-                "alerts": "yes",
-                "aqi": "yes",
             },
         )
 
     def getForecast(self):
         """
-        Returns dict of forecast, False if error.
+        Returns dict of forecast, None if error.
         """
         response = self._forecastResponse()
         if response.status_code == 200:
             return response.json()
         else:
-            return False
+            return None
 
     def calculateFireRisk(self, temp_c, humidity, wind_kph):
         """
