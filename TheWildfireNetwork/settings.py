@@ -10,10 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 API_KEY = "112a7f3da6b14eb08bf01432232608"
 
 from pathlib import Path
@@ -31,7 +27,7 @@ SECRET_KEY = "django-insecure-2crp*sf_=%&u+m@ey$v!d*4=968(_gw3=(1__e5#55+ztep@hl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = [".vercel.app"]
 
 
 # Application definition
