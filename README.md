@@ -2,13 +2,21 @@
 
 ![6183429](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6)
 
+---
 Your advanced solution for global forest fire prediction. Harnessing real-time weather data, our app offers accurate forecasts and wildfire risk assessment, combating the escalating crisis head-on.
+---
+
+<img width="2560" alt="image" src="https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/828dc4c3-abe5-42cc-8623-00963c0fda4c">
 
 ## Inspiration
 Our web app stemmed from the increasing frequency and severity of wildfires in the country. Over the past few years, Canada has been experiencing a rising number of wildfires that have had significant ecological, economic, and human impacts, and we created this app in efforts to combat this national and worldwide disaster.
 
 ## What it does
 Our app uses feedparser to scrape news headlines, selects those relating to wildfires, and displays them on the homepage. Our wildfire prediction uses an algorithm with real-time data gathered from WeatherAPI to calculate risk of fire anywhere around the world. Furthermore, we provide users with support resources as well as the opportunity to donate to help wildfire prevention and rescue efforts.
+
+<img width="1793" alt="image" src="https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/8286a445-2d95-470e-92c4-7e7d23c49bd2">
+
+<img width="966" alt="image" src="https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/9bc6dc55-8879-41aa-988c-1d3c58e960d7">
 
 ## How we built it
 We used Django as the back-end framework, with Python handling API requests and web scraping. On the front-end, HTML/CSS was used alongside Bootstrap for styling.
