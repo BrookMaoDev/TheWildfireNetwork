@@ -1,6 +1,6 @@
 # The Wildfire Network
 
-Check out our Devpost submission for a demo of The Wildfire Network: Devpost - [ThreatTrace AI](https://devpost.com/software/the-wildfire-network)
+Check out our Devpost submission for a demo of The Wildfire Network: Devpost - [The Wildfire Network](https://devpost.com/software/the-wildfire-network)
 
 ![6183429](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6)
 
