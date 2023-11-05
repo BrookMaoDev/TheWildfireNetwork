@@ -1,20 +1,20 @@
 # The Wildfire Network
 
-Check out our Devpost submission for a demo of The Wildfire Network: Devpost - [The Wildfire Network](https://devpost.com/software/the-wildfire-network)
-
-![6183429](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6)
-
----
+![Scrolling through The Wildfire Network website.](wildfire-network-demo.gif)
 
 Your advanced solution for global forest fire prediction. Harnessing real-time weather data, our app offers accurate forecasts and wildfire risk assessment, combating the escalating crisis head-on.
 
-![Image](https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/828dc4c3-abe5-42cc-8623-00963c0fda4c)
+## Video Demo
+
+<iframe width="560" height="315" src="https://youtu.be/GvBbZIoVRwg" frameborder="0" allowfullscreen></iframe>
 
 ## Inspiration
 
 Our web app stemmed from the increasing frequency and severity of wildfires in the country. Over the past few years, Canada has been experiencing a rising number of wildfires that have had significant ecological, economic, and human impacts. We created this app in efforts to combat this national and worldwide disaster.
 
 ## What It Does
+
+![Demo of Wildfire Risk Predictor.](https://res.cloudinary.com/devpost/image/fetch/s--u03Kv-Oc--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/8286a445-2d95-470e-92c4-7e7d23c49bd2)
 
 Our app uses feedparser to scrape news headlines, selects those relating to wildfires, and displays them on the homepage. Our wildfire prediction uses an algorithm with real-time data gathered from WeatherAPI to calculate the risk of fire anywhere around the world. Furthermore, we provide users with support resources as well as the opportunity to donate to help wildfire prevention and rescue efforts.
 
