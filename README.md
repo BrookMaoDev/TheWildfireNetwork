@@ -6,6 +6,12 @@ Your Advanced Solution for Global Forest Fire Prediction. Harnessing real-time w
 
 Watch our video demo on [Devpost](https://devpost.com/software/the-wildfire-network)!
 
+Visit our live site at [The Wildfire Network](https://the-wildfire-network.vercel.app/)!
+
+## Requirements
+
+Please note that some features may not work without the required dependencies listed in [requirements.txt](requirements.txt).
+
 ## Inspiration
 
 Our web app stemmed from the increasing frequency and severity of wildfires in the country. Over the past few years, Canada has been experiencing a rising number of wildfires that have had significant ecological, economic, and human impacts. We created this app during **Ignition Hacks 2023, a 36-hour hackathon,** in efforts to combat this national and worldwide disaster.
